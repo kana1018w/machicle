@@ -8,7 +8,7 @@ import googleLogo from "../assets/logos/google.png"
 import yahooLogo from "../assets/logos/yahoo.png"
 
 
-export default function Page() {
+export default function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
