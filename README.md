@@ -1,12 +1,107 @@
-# React + Vite
+# Machicle - 地域コミュニティイベント管理アプリ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+これは、地域住民のつながりを活性化させることを目的とした、地域コミュニティイベント管理アプリケーションのフロントエンドプロトタイプです。
 
-Currently, two official plugins are available:
+## 概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+本プロジェクトは、React を用いて、誰もが気軽に地域イベントやコミュニティを企画・参加できるプラットフォームを構築するための課題です。限られた開発期間の中で、以下の画面の実装を完了させました。
 
-## Expanding the ESLint configuration
+- ホーム
+- ログイン
+- 新規登録
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 目次
+
+- [使用技術・ライブラリ](#使用技術ライブラリ)
+- [セットアップと動作確認方法](#セットアップと動作確認方法)
+- [実装機能の説明](#実装機能の説明)
+
+### 主要技術
+
+- **React (v19.1.1):** Vite を使用して構築された、モダンな React 環境。
+- **JavaScript (ES6+):**
+- **Tailwind CSS:** ユーティリティファーストな CSS フレームワーク。
+- **Git / GitHub:** バージョン管理。
+
+### UI プロトタイピング
+
+- **v0.dev:** AI を活用した UI コンポーネント生成ツール。
+
+### 主要ライブラリ
+
+- **`react-router-dom`:** クライアントサイドでの画面遷移（ルーティング）のため利用。
+- **`lucide-react`:** アイコンを利用。
+- **`clsx`, `tailwind-merge`:** `cn`ユーティリティ関数を構成し、条件に応じたクラス名の結合のため利用。
+
+---
+
+## セットアップと動作確認方法
+
+**前提条件:**
+
+- Node.js: v22.18.0 で開発・動作確認済み
+- npm (Node.js に同梱)
+
+**手順:**
+
+1.  **リポジトリをクローン:**
+
+    ```bash
+    git clone https://github.com//machicle.git
+    ```
+
+2.  **プロジェクトディレクトリに移動:**
+
+    ```bash
+    cd machicle
+    ```
+
+3.  **依存ライブラリをインストール:**
+
+    ```bash
+    npm install
+    ```
+
+4.  **開発サーバーを起動:**
+
+    ```bash
+    npm run dev
+    ```
+
+5.  **ブラウザで確認:**
+    1. ブラウザで `http://localhost:5173` を開きます。
+    2. ヘッダーやフッターのリンクをクリックし、以下の 3 画面にアクセスできることを確認してください。
+    - ホーム画面 (`/`)
+    - ログイン画面 (`/login`)
+      - メールアドレス、パスワードを入力で「ログイン」ボタンが押せるようになること
+      - 新規登録画面に遷移できること
+    - 新規登録画面 (`/signup`)
+      - 必要事項を入力し、規約、プライバシーポリシーにチェックが入った後、「同意して登録する」ボタンが押せるようになること
+      - ログイン画面に遷移できること
+
+---
+
+## 実装機能の説明
+
+本プロトタイプでは、以下の機能を実装しました。
+
+- **ホーム画面 (`/`)**
+
+  - ダミーデータを使用したイベント/コミュニティの一覧をカード形式で表示。
+  - 固定ヘッダーとボトムナビゲーションバーによる共通レイアウト。
+  - ログアウトボタン（UI のみ）を配置。
+
+- **ログイン画面 (`/login`)**
+
+  - メールアドレスとパスワードによるログインフォームの UI。
+  - 各種ソーシャルログインボタンの UI を配置。
+  - 新規登録画面へのナビゲーションリンク。
+
+- **新規登録画面 (`/signup`)**
+
+  - 表示名、メールアドレス、パスワードの登録フォーム UI。
+  - 利用規約・プライバシーポリシーへの同意チェックボックス。
+  - ログイン画面へのナビゲーションリンク。
+
+- **画面遷移（ルーティング）**
+  - ログイン画面、新規登録画面において、ページリロードを伴わないスムーズな画面遷移を実現。
