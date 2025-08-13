@@ -155,11 +155,8 @@ export default function Login() {
           </button>
         </div>
 
-        {/* Spacer so the bottom link has breathing room on short viewports */}
-        <div className="h-20" />
-
         {/* Bottom Sign-up Link */}
-        <footer className="pb-8 pt-6">
+        <footer className="mt-auto pb-8 pt-10">
         <p className="text-center text-sm">
             <Link to="/signup" className="text-base md:text-lg underline underline-offset-4 hover:text-[#3B82F6]">
             新規会員登録はこちら

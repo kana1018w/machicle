@@ -54,7 +54,7 @@ export default function SignUp() {
       </header>
 
       {/* --- Form Section --- */}
-      <form onSubmit={onSubmit} className="flex flex-1 flex-col justify-start gap-6">
+      <form onSubmit={onSubmit} className="flex flex-col justify-start gap-6">
         {/* 表示名 */}
         <div className="flex flex-col space-y-2">
           <label htmlFor="displayName">表示名（ニックネーム）</label>
@@ -126,12 +126,10 @@ export default function SignUp() {
             {isSubmitting ? "登録中..." : "同意して登録する"}
           </button>
         </div>
-
-        <div className="flex-1" />
       </form>
 
-      {/* --- Footer Section --- */}
-      <footer className="pb-8 pt-6">
+      {/* Bottom login Link */}
+      <footer className="mt-auto pb-8 pt-10">
         <p className="text-center text-sm">
           すでにアカウントをお持ちですか？{" "}
           <Link to="/login" className="text-[#3B82F6] underline underline-offset-2">
